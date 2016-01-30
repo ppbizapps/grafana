@@ -1,6 +1,16 @@
 <ul class="sidemenu sidemenu-main">
 
+	<li ng-if="ctrl.contextSrv.pinned">
+		<a class="sidemenu-logo-section" class="pointer" ng-click="ctrl.contextSrv.toggleSideMenu()">
+			<span class="top-nav-logo-background">
+				<img class="logo-icon" src="img/grafana_icon.svg"></img>
+			</span>
+			<i class="icon-gf icon-gf-grafana_wordmark"></i>
+		</a>
+	</li>
+
 	<li class="sidemenu-org-section dropdown" ng-if="ctrl.isSignedIn">
+
 		<div class="sidemenu-org" data-toggle="dropdown" ng-click="ctrl.openUserDropdown()">
 			<div class="sidemenu-org-avatar">
 				<img ng-src="{{ctrl.user.gravatarUrl}}">
