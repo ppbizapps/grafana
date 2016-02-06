@@ -1,15 +1,15 @@
 ///<reference path="../../../headers/common.d.ts" />
 
-export function unknownPanelDirective() {
-  return {
-    restrict: 'E',
-    template: `
-    <grafana-panel>
-      <div class="text-center" style="padding-top: 2rem">
-          Unknown panel type: <strong>{{panel.type}}</strong>
-      </div>
-    </grafana-panel>
-    `,
-  };
+import {PanelCtrl} from 'app/plugins/sdk';
+
+export class UnknownPanelCtrl extends PanelCtrl {
+  static templateUrl = 'public/app/plugins/panel/unknown/module.html';
+
+  /** @ngInject */
+  constructor($scope, $injector) {
+    super($scope, $injector);
+  }
 }
+
+
 
