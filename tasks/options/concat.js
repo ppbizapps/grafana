@@ -7,8 +7,7 @@ module.exports = function(config) {
         '<%= genDir %>/vendor/css/normalize.min.css',
         '<%= genDir %>/vendor/css/timepicker.css',
         '<%= genDir %>/vendor/css/spectrum.css',
-        '<%= genDir %>/css/bootstrap.dark.min.css',
-        '<%= genDir %>/css/bootstrap-responsive.min.css',
+        '<%= genDir %>/css/grafana.dark.css',
         '<%= genDir %>/vendor/css/font-awesome.min.css'
       ],
       dest: '<%= genDir %>/css/grafana.dark.min.css'

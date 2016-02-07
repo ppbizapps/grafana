@@ -115,35 +115,36 @@
 // FONTS
 // --------------------------------------------------
 
-#font {
-  #family {
-    .serif() {
-      font-family: @serifFontFamily;
-    }
-    .sans-serif() {
-      font-family: @sansFontFamily;
-    }
-    .monospace() {
-      font-family: @monoFontFamily;
-    }
-  }
-  .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
-    font-size: @size;
-    font-weight: @weight;
-    line-height: @lineHeight;
-  }
-  .serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
-    #font > #family > .serif;
-    #font > .shorthand(@size, @weight, @lineHeight);
-  }
-  .sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
-    #font > #family > .sans-serif;
-    #font > .shorthand(@size, @weight, @lineHeight);
-  }
-  .monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
-    #font > #family > .monospace;
-    #font > .shorthand(@size, @weight, @lineHeight);
-  }
+@mixin font-serif() {
+  font-family: $serifFontFamily;
+}
+
+@mixin font-sans-serif() {
+  font-family: $sansFontFamily;
+}
+
+@mixin font-monospace() {
+  font-family: $monoFontFamily;
+}
+
+@mixin font-shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @lineHeight;
+}
+
+@mixin font-serif-shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+  @include font-serif()
+  @include font-shorthand(@size, @weight, @lineHeight);
+}
+.sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+  #font > #family > .sans-serif;
+  #font > .shorthand(@size, @weight, @lineHeight);
+}
+.monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+  #font > #family > .monospace;
+  #font > .shorthand(@size, @weight, @lineHeight);
+}
 }
 
 
@@ -204,30 +205,30 @@
 // Border Radius
 .border-radius(@radius) {
   -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
 }
 
 // Single Corner Border Radius
 .border-top-left-radius(@radius) {
   -webkit-border-top-left-radius: @radius;
-      -moz-border-radius-topleft: @radius;
-          border-top-left-radius: @radius;
+  -moz-border-radius-topleft: @radius;
+  border-top-left-radius: @radius;
 }
 .border-top-right-radius(@radius) {
   -webkit-border-top-right-radius: @radius;
-      -moz-border-radius-topright: @radius;
-          border-top-right-radius: @radius;
+  -moz-border-radius-topright: @radius;
+  border-top-right-radius: @radius;
 }
 .border-bottom-right-radius(@radius) {
   -webkit-border-bottom-right-radius: @radius;
-      -moz-border-radius-bottomright: @radius;
-          border-bottom-right-radius: @radius;
+  -moz-border-radius-bottomright: @radius;
+  border-bottom-right-radius: @radius;
 }
 .border-bottom-left-radius(@radius) {
   -webkit-border-bottom-left-radius: @radius;
-      -moz-border-radius-bottomleft: @radius;
-          border-bottom-left-radius: @radius;
+  -moz-border-radius-bottomleft: @radius;
+  border-bottom-left-radius: @radius;
 }
 
 // Single Side Border Radius
