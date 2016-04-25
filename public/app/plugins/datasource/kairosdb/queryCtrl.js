@@ -12,13 +12,14 @@ function (angular, _) {
     $scope.init = function() {
       $scope.panel.stack = false;
       if (!$scope.panel.downsampling) {
-        $scope.panel.downsampling = 'avg';
+        $scope.panel.downsampling = '(NONE)';
+        $scope.panelBlur();
       }
-      if (!$scope.target.downsampling) {
-        $scope.target.downsampling = $scope.panel.downsampling;
-        $scope.target.sampling = $scope.panel.sampling;
-      }
-      $scope.target.errors = validateTarget($scope.target);
+      // if (!$scope.target.downsampling) {
+      //   $scope.target.downsampling = $scope.panel.downsampling;
+      //   $scope.target.sampling = $scope.panel.sampling;
+      // }
+      // $scope.target.errors = validateTarget($scope.target);
     };
 
     $scope.targetBlur = function() {
