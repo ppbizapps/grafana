@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/grafana/grafana",
+	"ImportPath": "github.com/ppbizapps/grafana",
 	"GoVersion": "go1.5.1",
 	"Packages": [
 		"./pkg/..."
