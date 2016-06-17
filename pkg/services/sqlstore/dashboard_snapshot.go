@@ -29,6 +29,7 @@ func CreateDashboardSnapshot(cmd *m.CreateDashboardSnapshotCommand) error {
 			Key:       cmd.Key,
 			DeleteKey: cmd.DeleteKey,
 			OrgId:     cmd.OrgId,
+			GroupID:   cmd.GroupId,
 			UserId:    cmd.UserId,
 			External:  cmd.External,
 			Dashboard: cmd.Dashboard,
