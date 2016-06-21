@@ -29,6 +29,7 @@ type Dashboard struct {
 	Id      int64
 	Slug    string
 	OrgId   int64
+	GroupId int64
 	Version int
 
 	Created time.Time
@@ -90,6 +91,7 @@ func (cmd *SaveDashboardCommand) GetDashboardModel() *Dashboard {
 
 	dash.UpdatedBy = cmd.UserId
 	dash.OrgId = cmd.OrgId
+	dash.GroupId = cmd.GroupId
 	dash.UpdateSlug()
 	return dash
 }
@@ -113,6 +115,7 @@ type SaveDashboardCommand struct {
 	Dashboard *simplejson.Json `json:"dashboard" binding:"Required"`
 	UserId    int64            `json:"userId"`
 	OrgId     int64            `json:"-"`
+	GroupId   int64		   `json:"-"`
 	Overwrite bool             `json:"overwrite"`
 
 	Result *Dashboard

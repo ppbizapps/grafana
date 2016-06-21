@@ -13,6 +13,7 @@ type DashboardSnapshot struct {
 	Key         string
 	DeleteKey   string
 	OrgId       int64
+	GroupId     int64
 	UserId      int64
 	External    bool
 	ExternalUrl string
@@ -31,6 +32,7 @@ type DashboardSnapshotDTO struct {
 	Key         string `json:"key"`
 	DeleteKey   string `json:"deleteKey"`
 	OrgId       int64  `json:"orgId"`
+	GroupId     int64  `json:"groupId"`
 	UserId      int64  `json:"userId"`
 	External    bool   `json:"external"`
 	ExternalUrl string `json:"externalUrl"`
@@ -53,8 +55,9 @@ type CreateDashboardSnapshotCommand struct {
 	Key       string `json:"key"`
 	DeleteKey string `json:"deleteKey"`
 
-	OrgId  int64 `json:"-"`
-	UserId int64 `json:"-"`
+	OrgId   int64 `json:"-"`
+	GroupId int64 `json:"-"`
+	UserId  int64 `json:"-"`
 
 	Result *DashboardSnapshot
 }
